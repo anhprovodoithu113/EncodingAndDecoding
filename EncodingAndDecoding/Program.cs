@@ -142,7 +142,7 @@ namespace EncodingAndDecoding
             if (finalValue < INDEX_OF_FIRST_UPPER_CASE_CHARACTER)
             {
                 distanceToTable = INDEX_OF_FIRST_UPPER_CASE_CHARACTER - finalValue;
-                finalValue = INDEX_OF_LAST_LOWER_CASE_CHARACTER - distanceToTable - 1;
+                finalValue = INDEX_OF_LAST_LOWER_CASE_CHARACTER - distanceToTable + 1;
             }
 
             if (finalValue < INDEX_OF_FIRST_LOWER_CASE_CHARACTER
