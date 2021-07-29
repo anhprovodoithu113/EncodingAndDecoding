@@ -4,6 +4,10 @@ namespace EncodingAndDecoding
 {
     class Program
     {
+        const int INDEX_OF_FIRST_LOWER_CASE_CHARACTER = 97;
+        const int INDEX_OF_LAST_LOWER_CASE_CHARACTER = 122;
+        const int INDEX_OF_FIRST_UPPER_CASE_CHARACTER = 65;
+        const int INDEX_OF_LAST_UPPER_CASE_CHARACTER = 90;
         static void Main(string[] args)
         {
             while (true)
@@ -55,7 +59,8 @@ namespace EncodingAndDecoding
             var isInteger = int.TryParse(distance, out result);
             if (isInteger)
             {
-                return result;
+                var finalResult = result > 0 || result < 27;
+                return finalResult ? result : -1;
             }
             return -1;
         }
@@ -65,8 +70,14 @@ namespace EncodingAndDecoding
             Console.Write("Please input a string: ");
             var input = Console.ReadLine();
 
-            Console.Write("Please input a distance: ");
+            Console.Write("Please input a distance (1 - 26): ");
             var distance = CheckDistance(Console.ReadLine());
+
+            if(distance == -1)
+            {
+                Console.WriteLine("Wrong distance value!!!");
+                return;
+            }
 
             string output = string.Empty;
 
@@ -86,7 +97,7 @@ namespace EncodingAndDecoding
         {
             foreach (var c in input)
             {
-                output += Convert.ToChar((Convert.ToInt32(c) + distance));
+                output += Convert.ToChar(SyncAsciiValueForEncoding(Convert.ToInt32(c), distance));
             }
 
             return output;
@@ -96,10 +107,52 @@ namespace EncodingAndDecoding
         {
             foreach (var c in input)
             {
-                output += Convert.ToChar((Convert.ToInt32(c) - distance));
+                output += Convert.ToChar(SyncAsciiValueForDecoding(Convert.ToInt32(c), distance));
             }
 
             return output;
+        }
+
+        static int SyncAsciiValueForEncoding(int value, int distance)
+        {
+            var finalValue = value + distance;
+            var distanceToTable = 0;
+            
+            if(finalValue > INDEX_OF_LAST_UPPER_CASE_CHARACTER
+                && finalValue < INDEX_OF_FIRST_LOWER_CASE_CHARACTER)
+            {
+                distanceToTable = finalValue - INDEX_OF_LAST_UPPER_CASE_CHARACTER;
+                finalValue = INDEX_OF_FIRST_LOWER_CASE_CHARACTER + distanceToTable - 1;
+            }
+
+            if(finalValue > INDEX_OF_LAST_LOWER_CASE_CHARACTER)
+            {
+                distanceToTable = finalValue - INDEX_OF_LAST_LOWER_CASE_CHARACTER;
+                finalValue = INDEX_OF_FIRST_UPPER_CASE_CHARACTER + distanceToTable - 1;
+            }
+
+            return finalValue;
+        }
+
+        static int SyncAsciiValueForDecoding(int value, int distance)
+        {
+            var finalValue = value - distance;
+            var distanceToTable = 0;
+
+            if (finalValue < INDEX_OF_FIRST_UPPER_CASE_CHARACTER)
+            {
+                distanceToTable = INDEX_OF_FIRST_UPPER_CASE_CHARACTER - finalValue;
+                finalValue = INDEX_OF_LAST_LOWER_CASE_CHARACTER - distanceToTable - 1;
+            }
+
+            if (finalValue < INDEX_OF_FIRST_LOWER_CASE_CHARACTER
+                && finalValue > INDEX_OF_LAST_UPPER_CASE_CHARACTER)
+            {
+                distanceToTable = INDEX_OF_FIRST_LOWER_CASE_CHARACTER - finalValue;
+                finalValue = INDEX_OF_LAST_UPPER_CASE_CHARACTER - distanceToTable + 1;
+            }
+
+            return finalValue;
         }
     }
 }
