@@ -1,0 +1,16 @@
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.exe
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.deps.json
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.runtimeconfig.json
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.runtimeconfig.dev.json
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.dll
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\ref\EncodingAndDecoding.dll
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\bin\Debug\net5.0\EncodingAndDecoding.pdb
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.csprojAssemblyReference.cache
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.GeneratedMSBuildEditorConfig.editorconfig
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.AssemblyInfoInputs.cache
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.AssemblyInfo.cs
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.csproj.CoreCompileInputs.cache
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.dll
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\ref\EncodingAndDecoding.dll
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.pdb
+E:\C# Project\Console\EncodingAndDecoding\EncodingAndDecoding\obj\Debug\net5.0\EncodingAndDecoding.genruntimeconfig.cache
